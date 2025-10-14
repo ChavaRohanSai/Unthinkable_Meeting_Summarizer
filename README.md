@@ -91,5 +91,3 @@ Notes:
 - If Key Points or Action Items are not found, the application will display:
   "No more points mentioned."
 
-License:
-MIT License © 2025
