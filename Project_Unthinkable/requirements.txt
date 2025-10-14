@@ -1,0 +1,8 @@
+google-cloud-speech==2.33.0
+pydub
+ffmpeg-python
+whisper
+transformers
+torch
+torchaudio
+pyannote.audio
