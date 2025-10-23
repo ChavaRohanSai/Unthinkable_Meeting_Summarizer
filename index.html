@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Meeting Summarizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-microphone-alt"></i> AI Meeting Summarizer</h1>
+            <p class="subtitle">Upload your meeting audio and get a summary, key points, and action items instantly.</p>
+        </header>
+
+        <main>
+            <section class="upload-section card">
+                <div class="form-group">
+                    <label for="audioFile">1. Choose an audio file (.mp3, .wav):</label>
+                    <input type="file" id="audioFile" accept=".wav,.mp3">
+                </div>
+                <div class="form-group">
+                    <label for="numSpeakers">2. Number of speakers:</label>
+                    <input type="number" id="numSpeakers" min="1" value="2">
+                </div>
+                <button id="uploadBtn">
+                    <i class="fas fa-rocket"></i> Upload & Process
+                </button>
+                <p id="status"></p>
+            </section>
+
+            <div id="results" class="hidden">
+                <section id="meetingInfo" class="info-section card">
+                    <h2><i class="fas fa-info-circle"></i> Meeting Info</h2>
+                    <p id="date"></p>
+                    <p id="start"></p>
+                    <p id="end"></p>
+                </section>
+
+                <div class="columns">
+                    <section class="column card">
+                        <h2><i class="fas fa-file-alt"></i> Meeting Summary</h2>
+                        <textarea id="summary" readonly></textarea>
+                        <button id="downloadSummary"><i class="fas fa-download"></i> Download</button>
+                    </section>
+                    <section class="column card">
+                        <h2><i class="fas fa-lightbulb"></i> Key Points</h2>
+                        <textarea id="keyPoints" readonly></textarea>
+                        <button id="downloadKeyPoints"><i class="fas fa-download"></i> Download</button>
+                    </section>
+                    <section class="column card">
+                        <h2><i class="fas fa-check-square"></i> Action Items</h2>
+                        <textarea id="actionPoints" readonly></textarea>
+                        <button id="downloadActionPoints"><i class="fas fa-download"></i> Download</button>
+                    </section>
+                </div>
+
+                <section class="transcript-section card">
+                    <h2><i class="fas fa-align-left"></i> Full Transcript</h2>
+                    <textarea id="transcript" readonly></textarea>
+                    <button id="downloadTranscript"><i class="fas fa-download"></i> Download</button>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 AI Meeting Summarizer. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <div id="loader" class="loader-overlay hidden">
+        <div class="spinner"></div>
+        <p>Analyzing your meeting... this may take a moment.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
